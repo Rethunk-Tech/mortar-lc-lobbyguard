@@ -37,6 +37,7 @@ public class Plugin : BaseUnityPlugin
         Lengths.HookAll();
         Approval.Hook();
         Voice.Hook();
+        Vanilla.Hook();
         Log.LogInfo($"{MyPluginInfo.Name} {MyPluginInfo.Version} loaded");
     }
 
