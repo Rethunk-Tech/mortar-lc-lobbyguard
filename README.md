@@ -8,6 +8,8 @@ Keeps bad players from crashing or freezing your lobby.
 It checks what each player sends, voice chat included, before the game reads it. Anyone who sends something broken,
 or far more than the game ever would, gets disconnected. Players you kick stay kicked.
 
+Your lobby still shows as vanilla in the lobby list, so players who only look for vanilla lobbies can find it.
+
 Each kick goes in the BepInEx log with the player's SteamID and the reason, so you can block them on Steam.
 
 It can't do anything about a flood big enough to fill your internet connection.
