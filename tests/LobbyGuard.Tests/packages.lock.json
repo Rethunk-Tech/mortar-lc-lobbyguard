@@ -213,7 +213,7 @@
           "xunit.v3.runner.common": "[4.0.2]"
         }
       },
-      "tech.rethunk.mortar.LobbyGuard": {
+      "com.github.lethalcompanymodding.lobbyguard": {
         "type": "Project",
         "dependencies": {
           "BepInEx.Core": "[5.4.21, )"

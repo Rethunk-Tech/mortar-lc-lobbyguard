@@ -62,7 +62,7 @@ jobs:
       - run: dotnet restore --locked-mode
       - name: Pack and publish to Thunderstore
         env:
-          ThunderstoreToken: ${{ secrets.THUNDERSTORE_API_TOKEN }}
+          ThunderstoreToken: ${{ secrets.TCLI_AUTH_TOKEN }}
         # Use the pushed tag as the version, even if another version tag is on the same commit.
         run: dotnet build -c Release --no-restore -p:PublishTS=true -p:ReleaseTag="$GITHUB_REF_NAME"
       - name: GitHub release

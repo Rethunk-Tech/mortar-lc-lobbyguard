@@ -35,14 +35,14 @@ types, so tests reach the code through other classes, with `InternalsVisibleTo` 
 
 ## Publishing
 
-Pushing a `vX.Y.Z` tag publishes from CI with the `THUNDERSTORE_API_TOKEN` secret, once the build passes. To publish from your own computer,
-create a service account token for the team on Thunderstore (Settings, Teams, Service Accounts) and store it once.
-Mortar's Develop tab stores it in the same place when you upload from there. The Flatpak build of Mortar does that only
-when it can use your system keyring; otherwise it keeps the token inside its sandbox, where this build can't read it,
-so store it yourself as below.
+Pushing a `vX.Y.Z` tag publishes from CI with the `TCLI_AUTH_TOKEN` organization secret, once the build passes. To
+publish from your own computer, create a service account token for the team on Thunderstore (Settings, Teams, Service
+Accounts) and store it once:
 
-- Linux: `secret-tool store --label "Thunderstore Mortar" service thunderstore username Mortar`, then paste the token.
+- Linux: `secret-tool store --label "Thunderstore LethalCompanyModding" service thunderstore username LethalCompanyModding`,
+  then paste the token.
 - Windows: `Install-Module CredentialManager`, then
-  `New-StoredCredential -Persist LocalMachine -Target 'thunderstore:Mortar' -Password <token>`.
+  `New-StoredCredential -Persist LocalMachine -Target 'thunderstore:LethalCompanyModding' -Password <token>`.
 
-Then run `dotnet build -c Release -p:PublishTS=true`. Don't add `-bl` or `-v:d` to a publish build: MSBuild logs task inputs, and the token is one.
+Then run `dotnet build -c Release -p:PublishTS=true`. Don't add `-bl` or `-v:d` to a publish build: MSBuild logs task
+inputs, and the token is one.

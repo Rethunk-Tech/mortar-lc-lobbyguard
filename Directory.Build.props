@@ -6,7 +6,7 @@
   <Import Project="$(SolutionRoot)Config.Build.user.props" Condition="Exists('$(SolutionRoot)Config.Build.user.props')" />
 
   <PropertyGroup>
-    <ThunderstoreTeam>Mortar</ThunderstoreTeam>
+    <ThunderstoreTeam>LethalCompanyModding</ThunderstoreTeam>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -21,9 +21,9 @@
     <DebugType>embedded</DebugType>
   </PropertyGroup>
   <PropertyGroup>
-    <Authors>Rethunk Tech</Authors>
-    <Company>Rethunk Tech</Company>
-    <Copyright>Copyright (c) 2026 Rethunk Tech</Copyright>
+    <Authors>LethalCompanyModding Contributors</Authors>
+    <Company>LethalCompanyModding</Company>
+    <Copyright>Copyright (c) 2026 LethalCompanyModding Contributors</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>

@@ -4,10 +4,10 @@
   "name": "LobbyGuard",
   "values": {
     "description": "Stops malformed or flooding network traffic from crashing or freezing the host.",
-    "modAuthor": "Rethunk Tech",
-    "team": "Mortar",
-    "idPrefix": "tech.rethunk.mortar",
-    "repositoryUrl": "https://github.com/Rethunk-Tech/mortar-lc-lobbyguard",
+    "modAuthor": "LethalCompanyModding Contributors",
+    "team": "LethalCompanyModding",
+    "idPrefix": "com.github.lethalcompanymodding",
+    "repositoryUrl": "https://github.com/LethalCompanyModding/LobbyGuard",
     "audience": "everyone",
     "categories": "mods|bepinex"
   }

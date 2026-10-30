@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3
+
+- LobbyGuard now lives at LethalCompanyModding on GitHub and Thunderstore. Its plugin ID is now
+  `com.github.lethalcompanymodding.lobbyguard`, so it starts with a fresh config file.
+
 ## 0.2.2
 
 - Kicked players stay kicked again, and the log names players by their real SteamID. LobbyGuard read every
