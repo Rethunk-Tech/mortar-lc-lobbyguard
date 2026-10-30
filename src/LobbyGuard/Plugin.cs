@@ -5,6 +5,8 @@ using BepInEx;
 using BepInEx.Logging;
 using MonoMod.RuntimeDetour;
 using Netcode.Transports.Facepunch;
+using Steamworks;
+using Steamworks.Data;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -71,13 +73,21 @@ public class Plugin : BaseUnityPlugin
     // Names the player by SteamID in online games, so the host can block them. LAN games only have Netcode's number.
     internal static void Kick(NetworkManager manager, ulong clientId, string why)
     {
-        ulong transportId = manager.ConnectionManager.ClientIdToTransportId(clientId);
-        string who = manager.NetworkConfig.NetworkTransport is FacepunchTransport steam &&
-            steam.connectedClients.TryGetValue(transportId, out FacepunchTransport.Client player)
-            ? $"Steam user {player.steamId.Value}"
-            : $"client {clientId}";
-        Log.LogWarning($"Disconnected {who}: {why}");
+        ulong steamId = SteamIdOf(manager, clientId);
+        Log.LogWarning($"Disconnected {(steamId != 0 ? $"Steam user {steamId}" : $"client {clientId}")}: {why}");
         manager.DisconnectClient(clientId);
+    }
+
+    // The SteamID Steam proved for a client's connection, or 0 off Steam. Not the transport's Client.steamId: Facepunch's
+    // ConnectionInfo.Identity returns the remote address, so that is 0 for every client.
+    internal static ulong SteamIdOf(NetworkManager manager, ulong clientId)
+    {
+        ConnectionInfo info = default;
+        return manager.NetworkConfig.NetworkTransport is FacepunchTransport steam &&
+            steam.connectedClients.TryGetValue(manager.ConnectionManager.ClientIdToTransportId(clientId), out FacepunchTransport.Client player) &&
+            SteamNetworkingSockets.Internal.GetConnectionInfo(player.connection, ref info) && info.identity.IsSteamId
+            ? info.identity.SteamId.Value
+            : 0;
     }
 
     private static unsafe ulong Hash(ArraySegment<byte> body)

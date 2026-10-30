@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Kicked players stay kicked again, and the log names players by their real SteamID. LobbyGuard read every
+  player's SteamID as 0, which is also why 0.2.0 turned everyone away.
+
 ## 0.2.1
 
 - Players can join again. 0.2.0 turned every joining player away with "Your SteamID doesn't match your connection."

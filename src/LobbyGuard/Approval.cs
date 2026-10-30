@@ -1,6 +1,5 @@
 using System.Reflection;
 using MonoMod.RuntimeDetour;
-using Netcode.Transports.Facepunch;
 using Unity.Netcode;
 
 namespace LobbyGuard;
@@ -23,15 +22,8 @@ internal static class Approval
     private static void Approve(Orig orig, GameNetworkManager self, NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
         NetworkManager manager = NetworkManager.Singleton;
-        ulong transportId = manager.ConnectionManager.ClientIdToTransportId(request.ClientNetworkId);
-        if (request.ClientNetworkId == manager.LocalClientId || manager.NetworkConfig.NetworkTransport is not FacepunchTransport steam ||
-            !steam.connectedClients.TryGetValue(transportId, out FacepunchTransport.Client player))
-        {
-            orig(self, request, response);
-            return;
-        }
-        ulong steamId = player.steamId.Value;
-        if (StartOfRound.Instance == null || !StartOfRound.Instance.KickedClientIds.Contains(steamId))
+        ulong steamId = request.ClientNetworkId == manager.LocalClientId ? 0 : Plugin.SteamIdOf(manager, request.ClientNetworkId);
+        if (steamId == 0 || StartOfRound.Instance == null || !StartOfRound.Instance.KickedClientIds.Contains(steamId))
         {
             orig(self, request, response);
             return;

@@ -12,6 +12,7 @@
     <Publicize Include="Unity.Netcode.Runtime" />
     <Publicize Include="Facepunch Transport for Netcode for GameObjects" />
     <Publicize Include="DissonanceVoip" />
+    <Publicize Include="Facepunch.Steamworks.Win64" />
     <InternalsVisibleTo Include="LobbyGuard.Tests" />
   </ItemGroup>
 
