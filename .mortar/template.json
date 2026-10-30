@@ -1,0 +1,14 @@
+{
+  "template": "Rethunk-Tech/mortar-bepinex5-template",
+  "ref": "main",
+  "name": "LobbyGuard",
+  "values": {
+    "description": "Stops malformed or flooding network traffic from crashing or freezing the host.",
+    "modAuthor": "Rethunk Tech",
+    "team": "Mortar",
+    "idPrefix": "tech.rethunk.mortar",
+    "repositoryUrl": "https://github.com/Rethunk-Tech/mortar-lc-lobbyguard",
+    "audience": "everyone",
+    "categories": "mods|bepinex"
+  }
+}
