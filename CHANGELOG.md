@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Players can join again. 0.2.0 turned every joining player away with "Your SteamID doesn't match your connection."
+  Kicked players still stay kicked.
+
 ## 0.2.0
 
 - Your lobby shows as vanilla in the lobby list, so players who only look for vanilla lobbies can find it.
