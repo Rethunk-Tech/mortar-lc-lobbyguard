@@ -5,12 +5,20 @@
     <AssemblyTitle>LobbyGuard</AssemblyTitle>
     <RootNamespace>LobbyGuard</RootNamespace>
     <RepositoryUrl>https://github.com/Rethunk-Tech/mortar-lc-lobbyguard</RepositoryUrl>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Publicize Include="Unity.Netcode.Runtime" />
+    <Publicize Include="Facepunch Transport for Netcode for GameObjects" />
+    <Publicize Include="DissonanceVoip" />
+    <InternalsVisibleTo Include="LobbyGuard.Tests" />
+  </ItemGroup>
 
   <PropertyGroup>
     <IsThunderstorePackable>true</IsThunderstorePackable>
     <ThunderstoreName>LobbyGuard</ThunderstoreName>
-    <ThunderstoreDescription>Stops malformed or flooding network traffic from crashing or freezing the host.</ThunderstoreDescription>
+    <ThunderstoreDescription>Stops a bad client from crashing or freezing your lobby. Only the host needs it.</ThunderstoreDescription>
     <ThunderstoreCommunities>lethal-company</ThunderstoreCommunities>
     <ThunderstoreCategories>mods;bepinex</ThunderstoreCategories>
   </PropertyGroup>
