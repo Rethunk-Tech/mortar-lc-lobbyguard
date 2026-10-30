@@ -1,12 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" fill="#24262C"/>
-  <g fill="#7C818C">
-    <rect x="70" y="86" width="104" height="104" rx="10"/>
-    <circle cx="122" cy="80" r="22"/>
-    <circle cx="180" cy="138" r="22"/>
-  </g>
-  <g fill="#24262C">
-    <circle cx="70" cy="138" r="20"/>
-    <circle cx="122" cy="190" r="20"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><defs><pattern id="bricks" width="56" height="60" patternUnits="userSpaceOnUse"><rect x="4" y="4" width="48" height="22" rx="4" fill="#1F1F26"/><rect x="-24" y="34" width="48" height="22" rx="4" fill="#1F1F26"/><rect x="32" y="34" width="48" height="22" rx="4" fill="#1F1F26"/></pattern>
+<filter id="drop" x="-25%" y="-25%" width="150%" height="160%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="4"/><feOffset dy="6" result="b"/><feFlood flood-color="#000" flood-opacity="0.7"/><feComposite in2="b" operator="in"/>
+<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="pocket" x="-20%" y="-20%" width="140%" height="140%"><feOffset in="SourceAlpha" dy="4"/><feGaussianBlur stdDeviation="2.8" result="o"/><feComposite in="SourceAlpha" in2="o" operator="out" result="edge"/><feFlood flood-color="#000" flood-opacity="0.9"/><feComposite in2="edge" operator="in" result="sh"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="sh"/></feMerge></filter></defs><rect width="256" height="256" fill="#19191E"/><rect width="256" height="256" fill="url(#bricks)"/><g transform="translate(30.0 30.0) scale(8.166666666666666)"><g filter="url(#drop)"><path d="M12 1.6 L21 5.1 V11.6 C21 17 17.3 20.7 12 22.4 C6.7 20.7 3 17 3 11.6 V5.1 Z" fill="#D6B17A"/></g></g><g filter="url(#pocket)"><path d="M128.00 72.47 L173.73 90.43 V125.55 C173.73 154.13 154.95 174.55 128.00 184.35 C101.05 174.55 82.27 154.13 82.27 125.55 V90.43 Z" fill="#19191E"/><path d="M128.00 72.47 L173.73 90.43 V125.55 C173.73 154.13 154.95 174.55 128.00 184.35 C101.05 174.55 82.27 154.13 82.27 125.55 V90.43 Z" fill="url(#bricks)"/></g><g transform="translate(30.0 30.0) scale(8.166666666666666)"><path d="M9.1 12.1 L11.2 14.2 L15 10" fill="none" stroke="#F2F0EA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
