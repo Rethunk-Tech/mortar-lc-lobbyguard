@@ -3,12 +3,14 @@
   "ref": "main",
   "name": "LobbyGuard",
   "values": {
-    "description": "Stops malformed or flooding network traffic from crashing or freezing the host.",
-    "modAuthor": "LethalCompanyModding Contributors",
-    "team": "LethalCompanyModding",
-    "idPrefix": "com.github.lethalcompanymodding",
-    "repositoryUrl": "https://github.com/LethalCompanyModding/LobbyGuard",
     "audience": "everyone",
-    "categories": "mods|bepinex"
-  }
+    "categories": "mods|bepinex",
+    "description": "Stops malformed or flooding network traffic from crashing or freezing the host.",
+    "idPrefix": "com.github.lethalcompanymodding",
+    "modAuthor": "LethalCompanyModding Contributors",
+    "repositoryUrl": "https://github.com/LethalCompanyModding/LobbyGuard",
+    "team": "LethalCompanyModding"
+  },
+  "game": "lethal-company",
+  "templateIcon": "38f278e39af28aa9d0d374ac532a477c6b4dc5067a0ed0b1a15e9dce1273305b"
 }
